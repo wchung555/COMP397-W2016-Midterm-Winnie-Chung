@@ -2,6 +2,7 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
+        private _diceBackground: createjs.Bitmap;
         private _rollButton: objects.Button;
         private _clearButton: objects.Button;
         private _dieImage: createjs.Bitmap;
@@ -20,6 +21,10 @@ module scenes {
         public start(): void {
             // initialize private instance variable
             this._lastX = 75;
+            
+            // Add DICE Background to scene
+            this._diceBackground = new createjs.Bitmap(assets.getResult("DiceBackground"));
+            this.addChild(this._diceBackground); 
             
             // Add ROLL Button to scene
             this._rollButton = new objects.Button(

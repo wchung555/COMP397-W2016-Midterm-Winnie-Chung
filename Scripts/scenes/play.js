@@ -17,6 +17,9 @@ var scenes;
         Play.prototype.start = function () {
             // initialize private instance variable
             this._lastX = 75;
+            // Add DICE Background to scene
+            this._diceBackground = new createjs.Bitmap(assets.getResult("DiceBackground"));
+            this.addChild(this._diceBackground);
             // Add ROLL Button to scene
             this._rollButton = new objects.Button("RollButton", config.Screen.CENTER_X, 100);
             this._rollButton.on("click", this._rollButtonClick, this);
