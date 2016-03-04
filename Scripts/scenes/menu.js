@@ -16,11 +16,8 @@ var scenes;
         // Start Method
         Menu.prototype.start = function () {
             // Add Dice Background to the scene
-            this._diceBackground = new createjs.Bitmap(assets.getResult("DiceBackground"));
+            this._diceBackground = new createjs.Bitmap(assets.getResult("MenuBackground"));
             this.addChild(this._diceBackground);
-            //Add Menu Label
-            this._menuLabel = new objects.Label("MENU SCENE", "60px Arial", "#cc66ff", config.Screen.CENTER_X, config.Screen.CENTER_Y);
-            this.addChild(this._menuLabel);
             // add the Start button to the MENU scene
             this._startButton = new objects.Button("StartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 100);
             this.addChild(this._startButton);
